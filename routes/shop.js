@@ -4,9 +4,12 @@ const express = require('express');
 
 const router = express.Router();
 
+const adminData = require('./admin');
+
 router.get('/', (req, res, next) => {
+  res.render('shop',{products: adminData.products, docTitle: 'Shop'})
   // res.send('<h1>Hello from Express!</h1>');
-  res.sendFile(path.join(__dirname,'../', 'views','shop.html'));
+  // res.sendFile(path.join(__dirname,'../', 'views','shop.html'));
 });
 
 module.exports = router;
